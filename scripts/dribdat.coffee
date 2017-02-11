@@ -133,7 +133,15 @@ if DRIBDAT_URL
           for project, ix in data.projects
             if project.hashtag
               prlist += ":star: ##{project.hashtag} "
-          res.send "#{prlist}:star:\nTo see all #{pcount} projects, visit #{DRIBDAT_URL}"
+          prlist += " :star:"
+          msgData = {
+            text: "To see all #{pcount} projects, visit #{DRIBDAT_URL}"
+            attachments: [{
+              text: prlist
+            }]
+            channel: res.message.room
+          }
+          robot.adapter.customMessage msgData
 
     # Search for projects in Dribdat
     robot.respond /find( a)?( project)?(.*)/i, (res) ->
