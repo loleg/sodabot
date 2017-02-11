@@ -131,8 +131,8 @@ if DRIBDAT_URL
           pcount = data.projects.length
           prlist = ""
           for project, ix in data.projects
-            roomname = scrunchName project.name
-            prlist += ":star: ##{roomname} "
+            if project.hashtag
+              prlist += ":star: ##{project.hashtag} "
           res.send "#{prlist}:star:\nTo see all #{pcount} projects, visit #{DRIBDAT_URL}"
 
     # Search for projects in Dribdat
