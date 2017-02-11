@@ -133,7 +133,6 @@ if DRIBDAT_URL
           for project, ix in data.projects
             if project.hashtag
               prlist += ":star: <#{project.contact_url}|#{project.name}>: #{project.summary}\n"
-          prlist += " :star:"
           msgData = {
             text: "To see all #{pcount} projects, visit #{DRIBDAT_URL}"
             attachments: [{
