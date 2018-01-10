@@ -1,0 +1,40 @@
+# Make sure this is the only hubot instance running
+pkill -f hubot
+
+# Default port for webhooks
+# https://github.com/hubotio/hubot/blob/master/docs/scripting.md#http-listener
+
+export EXPRESS_PORT=8877
+
+# Dribdat integration
+# https://datalets.ch/dribdat
+
+export DRIBDAT_HOST=
+export DRIBDAT_APIKEY=
+
+# Mattermost configuration
+# https://github.com/renanvicente/hubot-mattermost
+
+MATTERMOST_ENDPOINT=https://...
+MATTERMOST_INCOME_URL=http://:/hooks/ncwc66...
+MATTERMOST_TOKEN=
+MATTERMOST_CHANNEL=
+MATTERMOST_ICON_URL=
+MATTERMOST_HUBOT_USERNAME=
+
+# Let's Chat configuration
+# https://github.com/sdelements/hubot-lets-chat
+
+export HUBOT_LCB_PROTOCOL=https
+export HUBOT_LCB_HOSTNAME=...
+export HUBOT_LCB_PORT=443
+export HUBOT_LCB_TOKEN=
+export HUBOT_LCB_ROOMS=57dfe1...
+./bin/hubot --adapter lets-chat --name sodabotnik &
+
+# Slack configuration
+# https://github.com/slackapi/hubot-slack
+
+export HUBOT_SLACK_TOKEN=xoxb-
+./bin/hubot --adapter slack &
+
